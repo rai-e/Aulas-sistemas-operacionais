@@ -1,5 +1,5 @@
 .data
-    num1:   .word 6   # Primeiro número
+    num1:   .byte 6   # Primeiro número
     num2:   .word 32   # Segundo número
     x:   .word 10   # Segundo número
     y:   .word 11   # Segundo número

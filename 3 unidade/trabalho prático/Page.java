@@ -1,7 +1,8 @@
 package aleatorio;
 
 public class Page {
-	String dados;
+	String dados;//representa simplificadamente o conteúdo da página: dados e instruções
+	
 	public Page(String dados) {
 		this.dados = dados;
 	}
