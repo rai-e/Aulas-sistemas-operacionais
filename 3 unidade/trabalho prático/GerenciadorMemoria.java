@@ -10,9 +10,9 @@ public class GerenciadorMemoria {
 		Page hd[] = new Page[6];
 		/* Considere que o sistema está no seguinte estado
 		 *	- A é composto de 3 blocos/páginas
-		 *		PARTE 1 DE A NA RAM
+		 *		PARTE 1 DE A NO DISCO
 		 *		PARTE 2 DE A NO DISCO
-		 *		PARTE 3 DE A NO DISCO
+		 *		PARTE 3 DE A NA RAM
 		 *	- B é composto de 4 blocos/páginas
 		 *		PARTE 1 DE B NO DISCO
 		 *		PARTE 2 DE B NO DISCO
@@ -27,6 +27,7 @@ public class GerenciadorMemoria {
 		 *  DISCO [PARTE 1 DE A, PARTE 2 DE A, PARTE 1 DE B, PARTE 2 DE B, PARTE 3 DE B, PARTE 4 DE B]
 		 * 	
 		 * */ 
+		
 		/* preenchendo a ram e disco com suas páginas cada um */
 		/* CRIANDO PÁGINAS DE A*/
 		hd[0] = new Page("PARTE 1 DE A");
@@ -46,7 +47,7 @@ public class GerenciadorMemoria {
 		Scanner scan = new Scanner(System.in);
 		while (opcao != 0) {
 			System.out.println("+----------------- MENU ------------------+");
-			System.out.println("| 1 - REALIZAR PAGE IN ");
+			System.out.println("| 1 - REALIZAR SUBSTITUIÇÃO DE PÁGINA ");
 			System.out.println("| 2 - REFERENCIAR QUADRO DA RAM ");
 			System.out.println("| 3 - VISUALIZAR RAM E DISCO ATUALMENTE ");
 			System.out.println("| 0 - SAIR ");
@@ -57,6 +58,7 @@ public class GerenciadorMemoria {
 			int indexPageRAM = -1;//guarda o índice da RAM que será referenciada
 			switch (opcao) {
 			case 1:
+				
 				System.out.print("Qual índice do disco será usada no page in? 0 a "+(hd.length-1)+" ");
 				indexPageHD = scan.nextInt();//Selecione qual índice do disco tem uma página que irá para a RAM
 				System.out.println("A página atualmente associada a esse índice do disco é: "+hd[indexPageHD]);//exiba a página que está no índice
@@ -64,15 +66,16 @@ public class GerenciadorMemoria {
 				System.out.println("O algoritmo está selecionando página da RAM para ser substituída...");
 				int indexSelecionadoAlgoritmo = -1;
 				/* substituir pelo índice calculado pelo algoritmo */
-				System.out.println("O índice escolhido pelo algoritmo para sair da RAM foi: "+indexSelecionadoAlgoritmo);//exibir valor de ram[indexSelecionadoAlgritmo]
-				System.out.println("A página atualmente associada a esse índice é: ram[indexSelecionadoAlgoritmo]");//exiba a página que está no índice escolhido pelo algoritmo
 				/* 
 				 * 
-				 * SUA IMPLEMENTAÇÃO DE PAGE IN
+				 * SUA IMPLEMENTAÇÃO DE SUBSTITUIÇÃO DE PÁGINAS
 				 * - O algoritmo irá escolher qual índice será selecionado para sair da RAM
 				 * - Realizará o swap de variáveis: ram[x] <-> hd[y]
 				 * 
 				 * */
+				
+				System.out.println("O índice escolhido pelo algoritmo para sair da RAM foi: "+indexSelecionadoAlgoritmo);//exibir valor de ram[indexSelecionadoAlgritmo]
+				System.out.println("A página atualmente associada a esse índice é: ram[indexSelecionadoAlgoritmo]");//exiba a página que está no índice escolhido pelo algoritmo
 				
 				
 				break;
